@@ -1,0 +1,139 @@
+body {
+    font-family: "Fira Code", monospace;
+    font-size: 16px;
+    background: #eff1f5;
+}
+
+nav {
+    border-top: #04a5e5 2px solid;
+    border-bottom: #04a5e5 2px solid;
+}
+
+nav .inner * {
+    margin: 1rem;
+}
+
+nav .inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+}
+
+nav .inner #message-box {
+    display: flex;
+    border: 1px solid #04a5e5;
+    background: rgba(4, 165, 229, 0.21);
+
+
+    animation-name: glowy;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+nav .inner #message-box p {
+    align-self: center;
+}
+
+@keyframes glowy {
+    0% {
+        box-shadow: #04a5e5 0px 0px 10px 0px;
+    }
+
+
+    50% {
+        box-shadow: #04a5e5 0px 0px 16px 0px;
+
+    }
+
+    100% {
+        box-shadow: #04a5e5 0px 0px 10px 0px;
+    }
+
+}
+
+@keyframes expand {
+    0% {
+        width: 0;
+
+        opacity: 0;
+
+    }
+    25% {
+
+        filter: drop-shadow(123.5px 12px);
+    }
+
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes pop {
+
+    0% {
+        opacity: 0;
+        transform: translateY(80px);
+        filter: grayscale(100%);
+    }
+
+    75% {
+        opacity: .25;
+        filter: grayscale(100%);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.section-header {
+    margin-left: 1rem;
+}
+
+.proj-box {
+    background: red;
+    padding: 1.5rem;
+    margin: 2rem 2rem 0 0;
+    max-width: 500px;
+
+    animation-name: pop;
+    animation-duration: 2s;
+    animation-iteration-count: initial;
+    animation-delay: 0s;
+}
+
+.area-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+#NovaMusic {
+    background: #04a5e5;
+}
+
+#Graphics {
+    background: #40a02b;
+}
+
+#Dotfiles {
+    background: #e64553;
+}
+
+.area-header h2 {
+    margin: 0px
+}
+
+#Immigration {
+    background: #df8e1d;
+}

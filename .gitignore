@@ -4,7 +4,7 @@
 /node_modules
 .idea
 package-lock.json
-npm-debug.log*
+npm-debug.logsudo service nginx restart*
 yarn-debug.log*
 yarn-error.log*
 /.pnp

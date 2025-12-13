@@ -9,7 +9,7 @@ nav {
     border-bottom: #04a5e5 2px solid;
 }
 
-nav .inner * {
+nav .inner {
     margin: 1rem;
 }
 
@@ -19,21 +19,37 @@ nav .inner {
     grid-template-rows: 1fr;
 }
 
-nav .inner #message-box {
-    display: flex;
+nav .NewsBox {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: 1fr;
+}
+
+nav .HeaderBox {
     border: 1px solid #04a5e5;
+    margin-left: 1rem;
     background: rgba(4, 165, 229, 0.21);
-
-
     animation-name: glowy;
     animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 
-nav .inner #message-box p {
-    align-self: center;
+
+
+.HeaderBox #statusline {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
 }
+
+#statusline * {margin:0px;}
+#date {color: red;}
+#statmessage {color: blue;}
+#stat {color:green;}
+
+
 
 @keyframes glowy {
     0% {

@@ -1,29 +1,44 @@
-const message_box = document.getElementById("message-box");
-const p = document.getElementById("message");
 
-MessageScroll()
-
-function MessageScroll() {
-    let message =
-        "Hello! My name is Sam!. I made this page to publish to Flathub, so I have nothing else to link here. Enjoy this text animation instead. | My email is riveroluna@protonmail.com |".split('');
-    let offset = -1
-
-    if (p != null) {
-        p.style.justifyContent = "center";
-        p.style.alignItems = "center";
-
-        setInterval(function () {
-            if (message_box != null) {
-                var width = message_box.getBoundingClientRect().width;
-                length = Math.floor(width / 11.8);
-            }
-
-            if (length + offset > message.length) {
-                offset = 0
-            }
-            p.innerHTML = message.slice(offset, length + offset).join('');
-
-            offset += 1;
-        }, 250)
-    }
+enum TitleStates {
+    Name,
+    RealName,
+    LunarPenguin,
 }
+
+let nav_title = document.getElementById("title");
+let state = TitleStates.Name;
+
+
+if (nav_title != null) {
+    nav_title.addEventListener("mouseover", (event: MouseEvent) => {
+        switch (state.valueOf()) {
+            case TitleStates.Name:
+                state = TitleStates.RealName;
+                // @ts-ignore
+                nav_title.textContent = "You can call me Sam though :)";
+                break;
+            case TitleStates.RealName:
+                state = TitleStates.LunarPenguin
+                // @ts-ignore
+                nav_title.innerText = "LunarPenguin"
+                break;
+            case TitleStates.LunarPenguin:
+                state = TitleStates.Name
+                // @ts-ignore
+                nav_title.innerText = "Samuel Rivero Luna"
+                break;
+
+
+        }
+
+
+        console.log("ooo hover");
+    })
+
+    console.log("HIII");
+} else {
+    console.log("Title doesnt exist for some reason")
+}
+
+
+
